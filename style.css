@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #ff4d6d;
+    --secondary-color: #ff8fa3;
+    --bg-color: #fff0f3;
+    --text-color: #590d22;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 77, 109, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 143, 163, 0.1) 0%, transparent 20%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bounce-text {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-gif {
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#yes-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+#yes-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff3355;
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
+}
+
+#no-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+#no-btn:hover {
+    background-color: #ffe6ea;
+}
+
+#move-random {
+    position: absolute;
+    /* Allows it to move freely */
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Gift Section Styles */
+.gift-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.gift-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.15);
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.gift-box:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-color);
+}
+
+.gift-emoji {
+    font-size: 3rem;
+}
+
+/* Modal/Overlay for specific gifts */
+#gift-content-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+    z-index: 100;
+    text-align: center;
+    border: 4px solid var(--secondary-color);
+}
+
+.flowers {
+    font-size: 3rem;
+    letter-spacing: 10px;
+}
+
+.long-message {
+    font-style: italic;
+    line-height: 1.6;
+    color: #444;
+    background: #fffafa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px dashed var(--secondary-color);
+}
+
+.close-btn {
+    margin-top: 20px;
+    background: gray;
+    color: white;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+
+#reject-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2b0505;
+    /* Dark red/black background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* On top of everything */
+}
+
+#reject-view h1 {
+    font-size: 4rem;
+    color: red;
+    text-shadow: 2px 2px 10px black;
+    margin-bottom: 20px;
+}
+
+#reject-view p {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}

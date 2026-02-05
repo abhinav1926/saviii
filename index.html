@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Screen 1: The Question -->
+        <div id="proposal-view" class="view active">
+            <h1 class="bounce-text">Will you be my Valentine? 💖</h1>
+            <div class="gif-container">
+                <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Cute Bears"
+                    class="hero-gif">
+            </div>
+            <div class="buttons">
+                <button id="yes-btn" onclick="handleYesClick()">YES! 😍</button>
+                <button id="no-btn" onmouseover="moveNoButton()" onclick="handleNoClick()">No 😢</button>
+            </div>
+            <p id="no-message"></p>
+        </div>
+
+        <!-- Screen 2: The Gifts -->
+        <div id="gift-view" class="view hidden">
+            <h1>Yay! I knew it! ❤️</h1>
+            <p>Here are your gifts (Open them all!)</p>
+            <div class="gift-container">
+                <div class="gift-box" onclick="openGift(1)">
+                    <div class="gift-emoji">🎁</div>
+                    <p>Gift 1</p>
+                </div>
+                <div class="gift-box" onclick="openGift(2)">
+                    <div class="gift-emoji">🎁</div>
+                    <p>Gift 2</p>
+                </div>
+                <div class="gift-box" onclick="openGift(3)">
+                    <div class="gift-emoji">🎁</div>
+                    <p>Gift 3</p>
+                </div>
+            </div>
+
+            <!-- Hidden Content for Gifts -->
+            <div id="gift-content-display" class="hidden">
+                <div id="gift-1-content" class="gift-content hidden">
+                    <h3>🎶 For You...</h3>
+                    <p>Playing our song...</p>
+                    <audio id="love-song" controls>
+                        <source src="SaveGram.App_AQNsRpyehpEACQ5nLWnRoRJH5Ci_e7M75NLAMGFiQwSGbTlcs_EKfW55j8C7O3PC_CwtwwtFx_xZ4xUAiVMNiDf2ybYaLiS0bRGiRcg.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div id="gift-2-content" class="gift-content hidden">
+                    <h3>🌹 A Bouquet for my Love</h3>
+                    <div class="flowers">
+                        💐🌺🌷🌸🌹
+                    </div>
+                </div>
+                <div id="gift-3-content" class="gift-content hidden">
+                    <h3>💌 From my Heart</h3>
+                    <p class="long-message">
+                     Everything is  batter with uhhhh🫶..... Everything has been better since you in the story of my life♥️ you're the best chapter ..... I'll never forget..... I wish 🤞you could see yourself the way I see👀 uhhhhh.... Myy rasogulla myy dosa my cutie pattotie  u are perfect to me ...... <b>All mine all yours!!</b> 
+                    </p>
+                </div>
+                <button onclick="closeGift()" class="close-btn">Close Gift</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Rejection (YOU ARE BAD) -->
+        <div id="reject-view" class="view hidden">
+            <h1>You are so bad! 😭</h1>
+            <p>You broke my heart...</p>
+            <div class="gif-container">
+                <img src="https://media.tenor.com/P5b6sM91h0cAAAAi/sad-bear-cry.gif" alt="Crying Bear" class="hero-gif">
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas for Confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
